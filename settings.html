@@ -205,12 +205,21 @@
 
 
         let account2 = JSON.parse(localStorage.getItem("account2"))
+        let accounttt = JSON.parse(localStorage.getItem("account"))
         cheacker.checked = JSON.parse(localStorage.getItem("darkmode"))
-        username.value = account2.user
-        password.value = account2.password
-        image2.src = account2.image
+        if (localStorage.getItem("account2")) {
+            username.value = account2.user
+            password.value = account2.password
+            image2.src = account2.image
 
-        banner.src = account2.banner
+            banner.src = account2.banner
+        } else {
+            username.value = accounttt.user
+            password.value = accounttt.password
+            image2.src = accounttt.image
+
+            banner.src = accounttt.banner
+        }
 
 
 

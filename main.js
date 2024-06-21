@@ -5,11 +5,14 @@ let imagse = document.querySelector("#nav_image");
 
 
 let accountt = JSON.parse(localStorage.getItem("account2"));
+let accountttt = JSON.parse(localStorage.getItem("account"));
 imagse.style.borderRadius = "50%"
-if (accountt.image === "" || accountt.image === undefined) {
-    imagse.src = "images/3135715.png"
-} else {
+
+if (localStorage.getItem("account2")) {
     imagse.src = accountt.image
+
+} else {
+    imagse.src = accountttt.image
 }
 
 if (localStorage.length > 1) {
