@@ -226,7 +226,9 @@
 
         but_delete.addEventListener("click", () => {
             username.value = "";
-            password.value = ""
+            password.value = "";
+            image2.src = "";
+            banner.src = "";
             localStorage.removeItem("account2")
             localStorage.removeItem("account")
             localStorage.removeItem("login_on")
@@ -252,6 +254,17 @@
             sp.forEach((a) => {
                 a.classList.add("darkmode")
             })
+
+        }
+
+        let acc = JSON.parse(localStorage.getItem("account2"))
+
+        if (acc.image !== undefined || acc.banner !== undefined) {
+            image2.src = acc.image;
+            banner.src = acc.banner;
+        } else {
+            image2.src = "images/11820363.png"
+            banner.src = "images/wallpaperflare.com_wallpaper (35).jpg"
         }
 
     </script>

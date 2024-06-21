@@ -8,20 +8,19 @@ let accountt = JSON.parse(localStorage.getItem("account2"));
 let accountttt = JSON.parse(localStorage.getItem("account"));
 imagse.style.borderRadius = "50%"
 
-if (localStorage.getItem("account2")) {
-    imagse.src = accountt.image
-
-} else {
+if (accountttt.image !== undefined) {
     imagse.src = accountttt.image
+} else {
+    imagse.src = "images/11820363.png"
 }
 
 if (localStorage.length > 1) {
-    if (localStorage.getItem("account2") === null) {
+    if (localStorage.getItem("account2") === null && localStorage.getItem("account") === null) {
         user_nav.innerHTML = "Hello Guest"
         localStorage.removeItem("login_on")
 
     } else {
-        user_nav.innerHTML = `Hello ${accountt.user}`
+        user_nav.innerHTML = `Hello ${accountttt.user}`
     }
 
 } else {
@@ -35,7 +34,7 @@ logout.addEventListener("click", () => {
     localStorage.removeItem("login_on")
 })
 
-if (localStorage.getItem("account2") === null) {
+if (localStorage.getItem("account2") === null && localStorage.getItem("account") === null) {
     localStorage.setItem("account2", JSON.stringify({ user: "Guest", password: "Guest333" }))
 }
 

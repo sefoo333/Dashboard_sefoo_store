@@ -64,7 +64,7 @@
                     </div>
                     <div class="profile_image">
                         <ion-icon name="create"></ion-icon>
-                        <img src="images/dcad205baea7c66617e4b7d84f35352b.png" alt="">
+                        <img src="images/11820363.png" alt="">
                     </div>
                 </div>
                 <div class="main">
@@ -117,8 +117,13 @@
 
         }
 
-        image.src = account.image;
-        banner.src = account.banner;
+        if (account.image !== undefined || account.banner !== undefined) {
+            image.src = account.image;
+            banner.src = account.banner;
+        } else {
+            image.src = "images/11820363.png"
+            banner.src = "images/wallpaperflare.com_wallpaper (35).jpg"
+        }
     </script>
 
 
