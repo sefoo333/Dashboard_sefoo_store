@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="profile section/profile.css">
+    <link rel="stylesheet" href="darkmode.css">
+</head>
+
+<body>
+
+    <div class="nav">
+        <div class="icon"><ion-icon name="reorder-four" class="but-side"></ion-icon></div>
+        <div class="search">
+            <input type="text" name="search" id="search" placeholder="Search">
+            <ion-icon name="search"></ion-icon>
+        </div>
+
+        <div class="profile">
+            <a href="profile.html" class="icon"><img src="images/11820363.png" alt="" id="nav_image"></a>
+            <span id="user_nav">Hello , User</span>
+        </div>
+    </div>
+
+    <script>
+        let button = document.querySelector(".but-side");
+
+        button.addEventListener("click", function () {
+            document.querySelector(".side").classList.toggle("hide");
+            document.querySelector(".nav").classList.toggle("padding")
+        })
+    </script>
+
+    <div class="windoww">
+
+        <div class="side">
+            <div class="logo">
+                <ion-icon name="storefront"></ion-icon>
+                <h1>
+                    Sefoo Store
+                </h1>
+            </div>
+            <div class="items">
+                <div class="item"><ion-icon name="home"></ion-icon><a href="index.html">Dashboard</a></div>
+                <div class="item"><ion-icon name="card"></ion-icon><a href="order.html">Orders</a></div>
+                <div class="item"><ion-icon name="people"></ion-icon><a href="customer.html">Customers</a></div>
+                <div class="item"><ion-icon name="person-circle"></ion-icon><a href="profile.html">profile</a></div>
+                <div class="item"><ion-icon name="settings"></ion-icon><a href="settings.html">Settings</a></div>
+                <div class="item logout"><ion-icon name="log-out"></ion-icon><a href="#">Log out</a></div>
+            </div>
+        </div>
+
+        <div class="sections">
+            <h1>Profile</h1>
+
+            <div class="profile">
+                <div class="profile_ima">
+                    <div class="banner">
+                        <ion-icon name="create"></ion-icon>
+                        <img src="images/wallpaperflare.com_wallpaper (35).jpg" alt="">
+                    </div>
+                    <div class="profile_image">
+                        <ion-icon name="create"></ion-icon>
+                        <img src="images/dcad205baea7c66617e4b7d84f35352b.png" alt="">
+                    </div>
+                </div>
+                <div class="main">
+                    <h2 class="username">Sefoo333</h2>
+                    <span class="sp">Admin</span>
+                    <div class="rates">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                    </div>
+                    <div class="buttons">
+                        <a href="settings.html" class="edit">Change Password</a>
+                        <a href="settings.html" class="edit-2">Edit Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+
+
+
+
+        let namee = document.querySelector(".username");
+        let sp = document.querySelector(".sp")
+        let image = document.querySelector(".profile_image img");
+        let banner = document.querySelector(".banner img");
+
+
+        let account = JSON.parse(localStorage.getItem("account"))
+        if (account.user === "" || account.user === undefined) {
+            namee.innerHTML = "Hello Guest"
+            sp.innerHTML = "Guest"
+
+        } else {
+            namee.innerHTML = account.user
+        }
+
+
+        const darkmode = JSON.parse(localStorage.getItem("darkmode"));
+        let ph1 = document.querySelector(".sections h1");
+        if (darkmode) {
+            document.body.classList.add("darkmode");
+            ph1.classList.add("darkmode");
+
+        }
+
+        image.src = account.image;
+        banner.src = account.banner;
+    </script>
+
+
+
+
+    <script src="main.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

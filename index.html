@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="darkmode.css">
+    </script>
+</head>
+
+<body>
+
+
+    <div class="s"></div>
+
+    <div class="windooooo login">
+        <img src="images/11820363.png" alt="profile">
+        <div class="text">
+            <h1 class="log">Welcome Sir</h1>
+            <span class="log_sp">Log in for join Dashboard ^^</span>
+        </div>
+        <form action="">
+            <div class="it">
+                <label for="na">Name</label>
+                <input type="text" placeholder="Name" id="na">
+            </div>
+            <div class="it">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Password">
+            </div>
+            <input type="submit" value="Login">
+            <a href="#" class="register log">Don't Have account?</a>
+        </form>
+    </div>
+
+    <!-- navbar -->
+
+    <div class="nav">
+        <div class="icon"><ion-icon name="reorder-four" class="but-side"></ion-icon></div>
+        <div class="search">
+            <input type="text" name="search" id="search" placeholder="Search">
+            <ion-icon name="search"></ion-icon>
+        </div>
+
+        <div class="profile">
+            <a href="profile.html" class="icon"><img src="images/11820363.png" alt="" id="nav_image"></a>
+            <span id="user_nav">Hello , User</span>
+        </div>
+    </div>
+
+    <script>
+        let button = document.querySelector(".but-side");
+
+        button.addEventListener("click", function () {
+            document.querySelector(".side").classList.toggle("hide");
+            document.querySelector(".nav").classList.toggle("padding")
+        })
+    </script>
+
+
+    <!-- sidebar -->
+
+
+    <div class="windoww">
+        <div class="side">
+            <div class="logo">
+                <ion-icon name="storefront"></ion-icon>
+                <h1>
+                    Sefoo Store
+                </h1>
+            </div>
+            <div class="items">
+                <div class="item"><ion-icon name="home"></ion-icon><a href="index.html">Dashboard</a></div>
+                <div class="item"><ion-icon name="card"></ion-icon><a href="order.html">Orders</a></div>
+                <div class="item"><ion-icon name="people"></ion-icon><a href="customer.html">Customers</a></div>
+                <div class="item"><ion-icon name="person-circle"></ion-icon><a href="profile.html">profile</a></div>
+                <div class="item"><ion-icon name="settings"></ion-icon><a href="settings.html">Settings</a></div>
+                <div class="item logout"><ion-icon name="log-out"></ion-icon><a href="#">Log out</a></div>
+            </div>
+
+            <div class="creator">
+                <span>Created By saifAli(sefoo333)</span>
+                <div class="links">
+                    <a href="https://www.linkedin.com/in/sefoo333/"><ion-icon name="logo-linkedin"></ion-icon></a>
+                    <a href="https://github.com/sefoo333"><ion-icon name="logo-github"></ion-icon></a>
+                </div>
+            </div>
+        </div>
+        <style>
+            .creator {
+                position: fixed;
+                bottom: 50px;
+                padding: 10px;
+                text-align: center;
+                font-size: 18px;
+                background-color: #282c2f;
+
+                & span {
+                    margin-bottom: 20px;
+                    display: block;
+                }
+
+                & .links {
+                    display: flex;
+                    justify-content: center;
+
+                    & a {
+                        color: white;
+                        font-size: 25px;
+                        margin-left: 15px;
+                    }
+                }
+            }
+        </style>
+
+        <div class="section">
+            <h1>Dashboard</h1>
+            <div class="anlaysis">
+                <div class="sec">
+                    <div class="count">
+                        <h2>250</h2>
+                        <span>All Customers</span>
+                    </div>
+                    <ion-icon name="people"></ion-icon>
+
+                </div>
+                <div class="sec">
+                    <div class="count">
+                        <h2>70</h2>
+                        <span>Orders</span>
+                    </div>
+                    <ion-icon name="pricetags"></ion-icon>
+
+                </div>
+                <div class="sec">
+                    <div class="count">
+                        <h2>40</h2>
+                        <span>Done Orders</span>
+                    </div>
+                    <ion-icon name="checkmark-done"></ion-icon>
+
+                </div>
+                <div class="sec">
+                    <div class="count">
+                        <h2>$7000</h2>
+                        <span>Earnings</span>
+                    </div>
+                    <ion-icon name="cash-outline"></ion-icon>
+                </div>
+            </div>
+            <!-- charts -->
+
+            <div class="charts">
+                <div class="chart-one o">
+                    <canvas width="325" id="chart">
+
+                    </canvas>
+                </div>
+                <div class="chart-two o">
+                    <canvas width="344" height="344px" id="chart2"></canvas>
+                </div>
+            </div>
+            <!-- sec1 -->
+            <div class="sections">
+
+                <div class="section_o">
+                    <div class="main">
+                        <h2 data-c="copy">Recent Orders</h2>
+                        <div class="button">
+                            <a href="order.html" class="view">View All</a>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <table>
+                            <tr class="head">
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                            </tr>
+
+                            <tr class="order">
+                                <td class="product_name">
+                                    <img src="images/products/ps5-product-thumbnail-01-en-14sep21.webp" alt="">
+                                    <h3>PS5</h3>
+                                </td>
+                                <td class="price">
+                                    500$
+                                </td>
+                                <td class="type">
+                                    Visa
+                                </td>
+                                <td class="status">
+                                    <span class="done">Done</span>
+                                </td>
+                            </tr>
+                            <tr class="order">
+                                <td class="product_name">
+                                    <img src="images/products/Microsoft-Xbox-Series-S-1TB_407abe16-746c-41d1-a59c-a6ea35a44920.850984947740bb726782ccfe53ebcff4.webp"
+                                        alt="">
+                                    <h3>Xbox serise x</h3>
+                                </td>
+                                <td class="price">
+                                    250$
+                                </td>
+                                <td class="type">
+                                    Cash
+                                </td>
+                                <td class="status">
+                                    <span class="cancel">Canceled</span>
+                                </td>
+                            </tr>
+                            <tr class="order">
+                                <td class="product_name">
+                                    <img src="images/products/iBUYPOWER-Gaming-PC-TraceMR258i-Ryzen-7-5700-RTX-3060-12GB-16GB-1TB-SSD-RGB-Windows-11-Home_3b288511-d6ed-4bec-92e9-f212f428a249.f9a9483cbf848f3cb6039f2848e52e2f.webp"
+                                        alt="">
+                                    <h3>PC</h3>
+                                </td>
+                                <td class="price">
+                                    300$
+                                </td>
+                                <td class="type">
+                                    Visa
+                                </td>
+                                <td class="status ">
+                                    <span class="inpro">In progress</span>
+                                </td>
+                            </tr>
+                            <tr class="order">
+                                <td class="product_name">
+                                    <img src="images/products/iBUYPOWER-Gaming-PC-TraceMR258i-Ryzen-7-5700-RTX-3060-12GB-16GB-1TB-SSD-RGB-Windows-11-Home_3b288511-d6ed-4bec-92e9-f212f428a249.f9a9483cbf848f3cb6039f2848e52e2f.webp"
+                                        alt="">
+                                    <h3>PC</h3>
+                                </td>
+                                <td class="price">
+                                    300$
+                                </td>
+                                <td class="type">
+                                    Cash
+                                </td>
+                                <td class="status ">
+                                    <span class="cancel">Canceled</span>
+                                </td>
+                            </tr>
+                            <tr class="order">
+                                <td class="product_name">
+                                    <img src="images/products/ps5-product-thumbnail-01-en-14sep21.webp" alt="">
+                                    <h3>Ps5</h3>
+                                </td>
+                                <td class="price">
+                                    300$
+                                </td>
+                                <td class="type">
+                                    Visa
+                                </td>
+                                <td class="status ">
+                                    <span class="done">Done</span>
+                                </td>
+                            </tr>
+                            <tr class="order">
+                                <td class="product_name">
+                                    <img src="images/products/iBUYPOWER-Gaming-PC-TraceMR258i-Ryzen-7-5700-RTX-3060-12GB-16GB-1TB-SSD-RGB-Windows-11-Home_3b288511-d6ed-4bec-92e9-f212f428a249.f9a9483cbf848f3cb6039f2848e52e2f.webp"
+                                        alt="">
+                                    <h3>PC</h3>
+                                </td>
+                                <td class="price">
+                                    300$
+                                </td>
+                                <td class="type">
+                                    Cash
+                                </td>
+                                <td class="status ">
+                                    <span class="inpro">In progress</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="section_c">
+                    <div class="main">
+                        <h2 data-c="copy">Recent Customers</h2>
+                        <div class="button">
+                            <a href="customer.html" class="view">View All</a>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="user" data-search="sefoo333">
+                            <img src="images/dcad205baea7c66617e4b7d84f35352b.png" alt="">
+                            <div class="name">
+                                <h3>Sefoo333</h3>
+                                <span>Admin</span>
+                            </div>
+                        </div>
+                        <div class="user wwww" data-search="user">
+                            <img src="images/11820363.png" alt="">
+                            <div class="name">
+                                <h3 class="ww">Mohamed</h3>
+                                <span class="wwe">Customer</span>
+                            </div>
+                        </div>
+                        <div class="user" data-search="user">
+                            <img src="images/2636603.png" alt="">
+                            <div class="name">
+                                <h3>User</h3>
+                                <span>Customer</span>
+                            </div>
+                        </div>
+                        <div class="user" data-search="user">
+                            <img src="images/3135715.png" alt="">
+                            <div class="name">
+                                <h3>Nour</h3>
+                                <span>Customer</span>
+                            </div>
+                        </div>
+                        <div class="user" data-search="user">
+                            <img src="images/3135715.png" alt="">
+                            <div class="name">
+                                <h3>Salah</h3>
+                                <span>Customer</span>
+                            </div>
+                        </div>
+                        <div class="user" data-search="user">
+                            <img src="images/5472d1b09d3d724228109d381d617326.jpg" alt="">
+                            <div class="name">
+                                <h3>Ali</h3>
+                                <span>Customer</span>
+                            </div>
+                        </div>
+                        <div class="user" data-search="user">
+                            <img src="images/2636603.png" alt="">
+                            <div class="name">
+                                <h3>Mohand</h3>
+                                <span>Customer</span>
+                            </div>
+                        </div>
+                        <div class="user" data-search="mohamed">
+                            <img src="images/dcad205baea7c66617e4b7d84f35352b.png" alt="">
+                            <div class="name">
+                                <h3>Mohamed</h3>
+                                <span>Customer</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script src="main.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <script>
+
+
+        let regitster_button = document.querySelector(".register")
+        let windowww = document.querySelector(".windooooo");
+
+
+        regitster_button.addEventListener("click", function () {
+            if (regitster_button.classList.contains("log")) {
+                document.querySelector(".log").innerHTML = "Register!"
+                document.querySelector(".log_sp").innerHTML = "Register And Log in Your Account :)"
+                regitster_button.innerHTML = "Have A account ?"
+                regitster_button.classList.remove("log")
+
+            } else {
+                document.querySelector(".log").innerHTML = "Log In!"
+                document.querySelector(".log_sp").innerHTML = "Log in Your Account ^^"
+                regitster_button.innerHTML = "Don't Have A account ?"
+                regitster_button.classList.add("log")
+
+            }
+            document.querySelector("#na").classList.toggle("edit")
+            windowww.classList.toggle("login")
+            document.querySelector("#password").classList.toggle("edit")
+        })
+
+        const darkmode = JSON.parse(localStorage.getItem("darkmode"));
+        let inps = document.querySelectorAll(".sec");
+        let ph1 = document.querySelector(".section h1");
+        let charts = document.querySelectorAll(".o")
+        let section_1 = document.querySelector(".section_c")
+        let orders = document.querySelector(".section_o")
+        if (darkmode) {
+            document.body.classList.add("darkmode")
+            inps.forEach((e) => {
+                e.classList.add("darkmode")
+            })
+            charts.forEach((a) => {
+                a.classList.add("darkmode")
+            })
+            ph1.classList.add("darkmode");
+            section_1.classList.add("darkmode");
+            orders.classList.add("darkmode");
+            document.querySelector(".head").classList.add("darkmode");
+
+        }
+
+        let chart = document.querySelector("#chart").getContext("2d")
+        let chart2 = document.querySelector("#chart2").getContext("2d");
+
+
+
+
+        let nav = document.querySelector(".nav");
+
+        window.onscroll = function () {
+            if (window.scrollY >= 10) {
+                nav.classList.add("fixed")
+            } else {
+                nav.classList.remove("fixed")
+            }
+        }
+
+
+        const data = {
+            labels: ["January", "February", "March", "April", "May"],
+            datasets: [
+                {
+                    label: 'Earnings',
+                    data: [500, 2600, 3000, 4000, 7000]
+                }]
+        };
+
+
+
+        const config = {
+            type: 'line',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Earnings'
+                    }
+                }
+            },
+        };
+
+
+        const data2 = {
+            labels: ["Done", "Canceled", "In progress"],
+            datasets:
+                [{
+                    label: "Orders",
+                    data: [40, 10, 20],
+                }]
+
+        }
+
+        const config2 = {
+            type: 'pie',
+            data: data2,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Orders'
+                    }
+                }
+            },
+        };
+
+        const test = new Chart(chart, config)
+        const test2 = new Chart(chart2, config2)
+
+
+
+        let name_inp = document.querySelector("#na")
+        let password_inp = document.querySelector("#password")
+        let account = {}
+        let getacccount = JSON.parse(localStorage.getItem("account"))
+        let dark_window = document.querySelector(".s");
+
+        document.forms[0].onsubmit = function (e) {
+
+            account = {
+                user: name_inp.value,
+                password: password_inp.value
+            }
+
+
+            if (windowww.classList.contains("login")) {
+                if (name_inp.value === getacccount.user && password_inp.value === getacccount.password) {
+                    windowww.classList.add('hide-2');
+                    dark_window.classList.add("hide-2");
+                    localStorage.setItem("login_on", true)
+                    location.reload()
+                } else {
+                    name_inp.style.border = "2px solid red";
+                    password_inp.style.border = "2px solid red"
+                }
+            } else {
+                if (name_inp.value !== "" && password_inp.value !== "") {
+                    localStorage.setItem("account", JSON.stringify(account))
+                    localStorage.setItem("account2", JSON.stringify(account))
+                    windowww.classList.add('hide-2');
+                    dark_window.classList.add("hide-2")
+                    localStorage.setItem("login_on", true)
+                    location.reload()
+                } else {
+                    name_inp.style.border = "2px solid red";
+                    password_inp.style.border = "2px solid red"
+                }
+            }
+
+            e.preventDefault()
+
+        }
+
+
+        if (localStorage.getItem("login_on") === "true") {
+            windowww.classList.add('hide-2');
+            dark_window.classList.add("hide-2");
+
+        }
+
+
+        document.querySelector(".ww").innerHTML = getacccount.user
+        document.querySelector(".wwww").setAttribute("data-search", getacccount.user)
+        document.querySelector(".wwww img").src = getacccount.image
+        document.querySelector(".wwe").innerHTML = "YOU"
+        if (accountt.image === "" || accountt.image === undefined) {
+            document.querySelector(".wwww img").src = "images/3135715.png"
+        } else {
+            document.querySelector(".wwww img").src = getacccount.image
+        }
+
+
+    </script>
+</body>
+
+</html>

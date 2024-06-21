@@ -1,0 +1,19 @@
+.darkmode {
+    background-color: #272626 !important;
+    box-shadow: 1px 4px 14px 2px #2c2c2c !important;
+    color: white;
+}
+
+.head.darkmode {
+    background-color: #373737;
+    box-shadow: 0 0 0 transparent !important;
+}
+
+.head.darkmode th {
+    color: white !important;
+}
+
+span.darkmode,
+label.darkmode {
+    color: white !important;
+}

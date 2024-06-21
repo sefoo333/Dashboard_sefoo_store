@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="customer section/customer.css">
+    <link rel="stylesheet" href="darkmode.css">
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <div class="nav">
+        <div class="icon"><ion-icon name="reorder-four" class="but-side"></ion-icon></div>
+        <div class="search">
+            <input type="text" name="search" id="search" placeholder="Search">
+            <ion-icon name="search"></ion-icon>
+        </div>
+
+        <div class="profile">
+            <a href="profile.html" class="icon"><img src="images/11820363.png" alt="" id="nav_image"></a>
+            <span id="user_nav">Hello , User</span>
+        </div>
+    </div>
+
+    <script>
+        let button = document.querySelector(".but-side");
+
+        button.addEventListener("click", function () {
+            document.querySelector(".side").classList.toggle("hide");
+            document.querySelector(".nav").classList.toggle("padding")
+        })
+    </script>
+
+    <div class="windoww">
+
+        <div class="side">
+            <div class="logo">
+                <ion-icon name="storefront"></ion-icon>
+                <h1>
+                    Sefoo Store
+                </h1>
+            </div>
+            <div class="items">
+                <div class="item"><ion-icon name="home"></ion-icon><a href="index.html">Dashboard</a></div>
+                <div class="item"><ion-icon name="card"></ion-icon><a href="order.html">Orders</a></div>
+                <div class="item"><ion-icon name="people"></ion-icon><a href="customer.html">Customers</a></div>
+                <div class="item"><ion-icon name="person-circle"></ion-icon><a href="profile.html">profile</a></div>
+                <div class="item"><ion-icon name="settings"></ion-icon><a href="settings.html">Settings</a></div>
+                <div class="item logout"><ion-icon name="log-out"></ion-icon><a href="#">Log out</a></div>
+            </div>
+        </div>
+
+
+        <div class="sections">
+
+            <h1>Customers</h1>
+
+            <div class="section_c">
+                <div class="main">
+                    <h2 data-c="copy">Recent Customers</h2>
+                    <div class="search_inp">
+                        <input type="text" name="search" id="search_cus" placeholder="Search">
+                        <ion-icon name="search"></ion-icon>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="user" data-search="sefoo333">
+                        <img src="images/dcad205baea7c66617e4b7d84f35352b.png" alt="">
+                        <div class="name">
+                            <h3>Sefoo333</h3>
+                            <span>admin</span>
+                        </div>
+                    </div>
+                    <div class="user wwww" data-search="user">
+                        <img src="images/11820363.png" alt="">
+                        <div class="name">
+                            <h3 class="ww">Mohamed</h3>
+                            <span class="wwe">Customer</span>
+                        </div>
+                    </div>
+                    <div class="user" data-search="user">
+                        <img src="images/2636603.png" alt="">
+                        <div class="name">
+                            <h3>User</h3>
+                            <span>Customer</span>
+                        </div>
+                    </div>
+                    <div class="user" data-search="user">
+                        <img src="images/3135715.png" alt="">
+                        <div class="name">
+                            <h3>Nour</h3>
+                            <span>Customer</span>
+                        </div>
+                    </div>
+                    <div class="user" data-search="user">
+                        <img src="images/3135715.png" alt="">
+                        <div class="name">
+                            <h3>Salah</h3>
+                            <span>Customer</span>
+                        </div>
+                    </div>
+                    <div class="user" data-search="user">
+                        <img src="images/5472d1b09d3d724228109d381d617326.jpg" alt="">
+                        <div class="name">
+                            <h3>Ali</h3>
+                            <span>Customer</span>
+                        </div>
+                    </div>
+                    <div class="user" data-search="user">
+                        <img src="images/2636603.png" alt="">
+                        <div class="name">
+                            <h3>Mohand</h3>
+                            <span>Customer</span>
+                        </div>
+                    </div>
+                    <div class="user" data-search="mohamed">
+                        <img src="images/dcad205baea7c66617e4b7d84f35352b.png" alt="">
+                        <div class="name">
+                            <h3>Mohamed</h3>
+                            <span>Customer</span>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+    <script>
+
+        const darkmode = JSON.parse(localStorage.getItem("darkmode"));
+        let ph1 = document.querySelector(".sections h1");
+        let section_1 = document.querySelector(".section_c")
+        if (darkmode) {
+            document.body.classList.add("darkmode");
+            ph1.classList.add("darkmode");
+            section_1.classList.add("darkmode");
+
+        }
+
+
+        let users2 = ["mohamed", "Ali", "Nour", "Ahmed", "salah", "Youssef", "mohy", "Abdelrahman"];
+        let images = ["images/11820363.png", "images/2636603.png", "images/3135715.png", "images/2636603.png", "images/11820363.png", "images/11820363.png", "images/2636603.png", "images/3135715.png"]
+
+        for (a = 0; a < users2.length; a++) {
+            let parent = document.createElement("div")
+            parent.className = "user"
+            parent.setAttribute("data-search", users2[a].toLowerCase());
+            let img = document.createElement("img");
+
+            img.src = images[a];
+            let ch_pa = document.createElement("div");
+            ch_pa.className = "name"
+            let hh = document.createElement("h3")
+            hh.innerHTML = users2[a];
+            let span = document.createElement("span");
+            span.innerHTML = "Customer"
+
+            document.querySelector(".list").appendChild(parent)
+            parent.appendChild(img)
+            parent.appendChild(ch_pa)
+            ch_pa.appendChild(hh)
+            ch_pa.appendChild(span)
+        }
+
+
+        let search = document.querySelector("#search_cus");
+
+        let butt = document.querySelector(".search_inp ion-icon");
+        let users = document.querySelectorAll(".list .user")
+        butt.addEventListener("click", function () {
+            search.classList.toggle("active")
+        })
+
+        search.onblur = function () {
+            for (i = 0; i < users.length; i++) {
+                if (search.value !== users[i].getAttribute("data-search") && search.value !== "") {
+                    users[i].classList.add("on")
+
+                } else {
+                    users[i].classList.remove("on")
+                }
+            }
+        }
+
+
+
+        let getacccount = JSON.parse(localStorage.getItem("account"))
+        document.querySelector(".ww").innerHTML = getacccount.user
+        document.querySelector(".wwww").setAttribute("data-search", getacccount.user)
+        document.querySelector(".wwww img").src = getacccount.image
+        document.querySelector(".wwe").innerHTML = "YOU"
+
+    </script>
+</body>
+
+</html>

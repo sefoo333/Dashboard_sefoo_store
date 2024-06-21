@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="settings section/settigns.css">
+    <link rel="stylesheet" href="darkmode.css">
+</head>
+
+<body>
+
+
+    <!-- navbar -->
+
+    <div class="nav">
+        <div class="icon"><ion-icon name="reorder-four" class="but-side"></ion-icon></div>
+        <div class="search">
+            <input type="text" name="search" id="search" placeholder="Search">
+            <ion-icon name="search"></ion-icon>
+        </div>
+
+        <div class="profile">
+            <a href="profile.html" class="icon"><img src="images/11820363.png" alt="" id="nav_image"></a>
+            <span id="user_nav">Hello , User</span>
+        </div>
+    </div>
+
+    <script>
+        let button = document.querySelector(".but-side");
+
+        button.addEventListener("click", function () {
+            document.querySelector(".side").classList.toggle("hide");
+            document.querySelector(".nav").classList.toggle("padding")
+        })
+    </script>
+
+    <div class="windoww">
+        <div class="side">
+            <div class="logo">
+                <ion-icon name="storefront"></ion-icon>
+                <h1>
+                    Sefoo Store
+                </h1>
+            </div>
+            <div class="items">
+                <div class="item"><ion-icon name="home"></ion-icon><a href="index.html">Dashboard</a></div>
+                <div class="item"><ion-icon name="card"></ion-icon><a href="order.html">Orders</a></div>
+                <div class="item"><ion-icon name="people"></ion-icon><a href="customer.html">Customers</a></div>
+                <div class="item"><ion-icon name="person-circle"></ion-icon><a href="profile.html">profile</a></div>
+                <div class="item"><ion-icon name="settings"></ion-icon><a href="settings.html">Settings</a></div>
+                <div class="item logout"><ion-icon name="log-out"></ion-icon><a href="#">Log out</a></div>
+            </div>
+        </div>
+
+        <div class="sections">
+            <h1>Settings</h1>
+
+            <div class="settings_sec">
+                <div class="sec-1">
+                    <h2>Public</h2>
+                    <div class="settings_on_section">
+                        <div class="set-1">
+                            <span>Dark Mode:</span>
+                            <input type="checkbox" name="dark_mode" id="dark_mode">
+                            <label for="dark_mode"></label>
+                        </div>
+                        <div style="margin-top: 15px;" class="set-1">
+                            <span>Langauge:</span>
+                            <span>Coming soon</span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="sec-2">
+                    <h2>Account</h2>
+                    <div class="sett_on_sec">
+                        <form action="">
+                            <div class="banner s">
+                                <label for="name">Banner</label>
+                                <div class="la">
+                                    <div class="uploader">
+                                        <label for="banner">Change banner</label>
+                                        <input type="file" name="banner" id="banner" class="ss">
+                                    </div>
+                                    <img src="images/wallpaperflare.com_wallpaper (35).jpg" alt="" id="bna">
+                                </div>
+                            </div>
+                            <div class="immmage s">
+                                <label for="name">image</label>
+                                <div class="la">
+                                    <div class="uploader">
+                                        <label for="iamge">Change Image</label>
+                                        <input type="file" name="iamge" id="iamge" class="ss">
+                                    </div>
+                                    <img src="images/11820363.png" alt="" id="ima">
+                                </div>
+                            </div>
+                            <div class="email s">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" id="name">
+                            </div>
+                            <div class="password s">
+                                <label for="name">Password</label>
+                                <div class="la">
+                                    <input type="password" name="password" id="password">
+                                    <ion-icon name="eye" class="password_on"></ion-icon>
+                                </div>
+                            </div>
+                            <div class="buttons ">
+                                <input class="but" type="submit" value="Change Data">
+                                <button class="but delete">Delete Account</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+
+
+    <script>
+
+        let but = document.querySelector(".password_on");
+        let password_inp = document.querySelector("#password")
+        but.addEventListener("click", function () {
+            if (password_inp.getAttribute("type") === "password") {
+                password_inp.setAttribute("type", "text")
+                but.style.color = "black"
+            } else {
+                password_inp.setAttribute("type", "password")
+                but.style.color = "#ccc"
+            }
+        })
+
+        let username = document.querySelector("#name");
+        let password = document.querySelector("#password");
+        let cheacker = document.querySelector("#dark_mode");
+        let account = {}
+
+        let but_delete = document.querySelector(".delete");
+
+
+        cheacker.addEventListener("click", () => {
+            if (cheacker.checked === true) {
+                localStorage.setItem("darkmode", true)
+                location.reload()
+            } else {
+                localStorage.setItem("darkmode", false)
+                location.reload()
+
+            }
+        })
+        let image_uploader = document.querySelector("#iamge")
+        let banner_uploader = document.querySelector("#banner")
+        let image2 = document.querySelector("#ima");
+        let banner = document.querySelector("#bna");
+
+        image_uploader.onchange = function () {
+            let reader = new FileReader();
+
+            reader.onload = function (e) {
+                image2.src = e.target.result;
+            }
+            reader.readAsDataURL(image_uploader.files[0])
+
+        }
+        banner_uploader.onchange = function () {
+            let reader = new FileReader();
+
+            reader.onload = function (e) {
+                banner.src = e.target.result;
+            }
+            reader.readAsDataURL(banner_uploader.files[0])
+
+        }
+        let ii = document.querySelectorAll(".ss");
+        document.forms[0].onsubmit = function (e) {
+
+            account = {
+                user: username.value,
+                password: password.value,
+                image: image2.src,
+                banner: banner.src
+            }
+
+
+
+
+
+            localStorage.setItem("account2", JSON.stringify(account))
+            localStorage.setItem("account", JSON.stringify(account))
+            location.reload()
+            // location.reload()
+
+            e.preventDefault()
+
+        }
+
+
+
+        let account2 = JSON.parse(localStorage.getItem("account2"))
+        cheacker.checked = JSON.parse(localStorage.getItem("darkmode"))
+        username.value = account2.user
+        password.value = account2.password
+        image2.src = account2.image
+
+        banner.src = account2.banner
+
+
+
+
+        but_delete.addEventListener("click", () => {
+            username.value = "";
+            password.value = ""
+            localStorage.removeItem("account2")
+            localStorage.removeItem("account")
+            localStorage.removeItem("login_on")
+            window.open("index.html")
+        })
+
+
+
+        const darkmode = JSON.parse(localStorage.getItem("darkmode"));
+        let ph1 = document.querySelector(".sections h1");
+        let section_1 = document.querySelector(".settings_sec");
+        let sp = document.querySelectorAll(".set-1 span");
+        let sp2 = document.querySelectorAll(".s label");
+
+        if (darkmode) {
+            document.body.classList.add("darkmode");
+            ph1.classList.add("darkmode");
+            section_1.classList.add("darkmode");
+
+            sp2.forEach((e) => {
+                e.classList.add("darkmode")
+            })
+            sp.forEach((a) => {
+                a.classList.add("darkmode")
+            })
+        }
+
+    </script>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

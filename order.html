@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="order_section/order.css">
+    <link rel="stylesheet" href="darkmode.css">
+</head>
+
+<body>
+
+    <div class="nav">
+        <div class="icon"><ion-icon name="reorder-four" class="but-side"></ion-icon></div>
+        <div class="search">
+            <input type="text" name="search" id="search" placeholder="Search">
+            <ion-icon name="search"></ion-icon>
+        </div>
+
+        <div class="profile">
+            <a href="profile.html" class="icon"><img src="images/11820363.png" alt="" id="nav_image"></a>
+            <span id="user_nav">Hello , User</span>
+        </div>
+    </div>
+
+    <script>
+        let button = document.querySelector(".but-side");
+
+        button.addEventListener("click", function () {
+            document.querySelector(".side").classList.toggle("hide");
+            document.querySelector(".nav").classList.toggle("padding")
+        })
+    </script>
+
+    <div class="windoww">
+
+        <div class="side">
+            <div class="logo">
+                <ion-icon name="storefront"></ion-icon>
+                <h1>
+                    Sefoo Store
+                </h1>
+            </div>
+            <div class="items">
+                <div class="item"><ion-icon name="home"></ion-icon><a href="index.html">Dashboard</a></div>
+                <div class="item"><ion-icon name="card"></ion-icon><a href="order.html">Orders</a></div>
+                <div class="item"><ion-icon name="people"></ion-icon><a href="customer.html">Customers</a></div>
+                <div class="item"><ion-icon name="person-circle"></ion-icon><a href="profile.html">profile</a></div>
+                <div class="item"><ion-icon name="settings"></ion-icon><a target="_parent"
+                        href="settings.html">Settings</a></div>
+                <div class="item logout"><ion-icon name="log-out"></ion-icon><a href="#">Log out</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sections">
+            <h1>Orders</h1>
+            <div class="section_o">
+                <div class="main">
+                    <h2 data-c="copy">Orders</h2>
+                    <div class="button">
+                        <a href="#" class="add">add Order</a>
+                    </div>
+                </div>
+                <div class="list">
+                    <table>
+                        <tr class="head">
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                        </tr>
+
+                        <tr class="order">
+                            <td class="product_name">
+                                <img src="images/products/ps5-product-thumbnail-01-en-14sep21.webp" alt="">
+                                <h3>PS5</h3>
+                            </td>
+                            <td class="price">
+                                500$
+                            </td>
+                            <td class="type">
+                                Visa
+                            </td>
+                            <td class="status">
+                                <span class="done">Done</span>
+                            </td>
+                        </tr>
+                        <tr class="order">
+                            <td class="product_name">
+                                <img src="images/products/Microsoft-Xbox-Series-S-1TB_407abe16-746c-41d1-a59c-a6ea35a44920.850984947740bb726782ccfe53ebcff4.webp"
+                                    alt="">
+                                <h3>Xbox serise x</h3>
+                            </td>
+                            <td class="price">
+                                250$
+                            </td>
+                            <td class="type">
+                                Cash
+                            </td>
+                            <td class="status">
+                                <span class="cancel">Canceled</span>
+                            </td>
+                        </tr>
+                        <tr class="order">
+                            <td class="product_name">
+                                <img src="images/products/iBUYPOWER-Gaming-PC-TraceMR258i-Ryzen-7-5700-RTX-3060-12GB-16GB-1TB-SSD-RGB-Windows-11-Home_3b288511-d6ed-4bec-92e9-f212f428a249.f9a9483cbf848f3cb6039f2848e52e2f.webp"
+                                    alt="">
+                                <h3>PC</h3>
+                            </td>
+                            <td class="price">
+                                300$
+                            </td>
+                            <td class="type">
+                                Visa
+                            </td>
+                            <td class="status ">
+                                <span class="inpro">In progress</span>
+                            </td>
+                        </tr>
+                        <tr class="order">
+                            <td class="product_name">
+                                <img src="images/products/iBUYPOWER-Gaming-PC-TraceMR258i-Ryzen-7-5700-RTX-3060-12GB-16GB-1TB-SSD-RGB-Windows-11-Home_3b288511-d6ed-4bec-92e9-f212f428a249.f9a9483cbf848f3cb6039f2848e52e2f.webp"
+                                    alt="">
+                                <h3>PC</h3>
+                            </td>
+                            <td class="price">
+                                300$
+                            </td>
+                            <td class="type">
+                                Cash
+                            </td>
+                            <td class="status ">
+                                <span class="cancel">Canceled</span>
+                            </td>
+                        </tr>
+                        <tr class="order">
+                            <td class="product_name">
+                                <img src="images/products/ps5-product-thumbnail-01-en-14sep21.webp" alt="">
+                                <h3>Ps5</h3>
+                            </td>
+                            <td class="price">
+                                300$
+                            </td>
+                            <td class="type">
+                                Visa
+                            </td>
+                            <td class="status ">
+                                <span class="done">Done</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <form action="" class="ff">
+                <!-- <div class="img_pr">
+                    <input type="file" name="img" id="img">
+                </div> -->
+                <div class="name_product s">
+                    <label for="name">Product Name:</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="price s">
+                    <label for="price">Price:</label>
+                    <input type="number" name="price" id="price">
+                </div>
+                <div class="count s">
+                    <label for="count">Count:</label>
+                    <input type="number" name="count" id="count">
+                </div>
+                <div class="type s">
+                    <label for="type">Type:</label>
+                    <select name="type" id="type">
+                        <option value="Cash">Cash</option>
+                        <option value="Credit card">Credit card</option>
+                    </select>
+
+
+                </div>
+                <div class="button">
+                    <input type="submit" value="Add">
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <div class="wi">
+        <ion-icon name="alert-outline"></ion-icon>
+        <span>Fill The Inputs :)</span>
+    </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="main.js"></script>
+
+
+    <script>
+
+
+
+        const darkmode = JSON.parse(localStorage.getItem("darkmode"));
+        let inps = document.querySelectorAll(".sec");
+        let ph1 = document.querySelector(".sections h1");
+        let orders = document.querySelector(".section_o")
+        let formm = document.querySelector(".ff");
+        if (darkmode) {
+            document.body.classList.add("darkmode")
+            inps.forEach((e) => {
+                e.classList.add("darkmode")
+            })
+            ph1.classList.add("darkmode");
+            orders.classList.add("darkmode");
+            document.querySelector(".head").classList.add("darkmode");
+            formm.classList.add('darkmode')
+
+        }
+
+
+        let nav = document.querySelector(".nav");
+
+        window.onscroll = function () {
+            if (window.scrollY >= 10) {
+                nav.classList.add("fixed")
+            } else {
+                nav.classList.remove("fixed")
+            }
+        }
+
+
+        let namee = document.querySelector("#name");
+        let price = document.querySelector("#price");
+        let count = document.querySelector("#count");
+        let type = document.querySelector("select");
+        // let img = document.querySelector("#img");
+        let windoww = document.querySelector(".wi")
+
+        // document.querySelector(".remove").addEventListener("click", () => {
+        //     inpss.forEach((e) => {
+        //         e.classList.toggle("remove_cho")
+        //     })
+        // })
+
+
+        let all = document.querySelectorAll(".remove_cho");
+
+        all.forEach((e) => {
+            e.addEventListener("click", () => {
+                if (e.classList.contains("remove_cho")) {
+                    e.classList.add("hide")
+                } else {
+                    e.classList.remove("hide")
+                }
+            })
+        })
+
+
+        document.querySelector(".add").addEventListener("click", () => {
+            document.querySelector("form").classList.toggle("active")
+        })
+
+
+        document.forms[0].onsubmit = function (e) {
+
+
+            let active;
+            if (namee.value !== "" && price.value !== "" && count.value !== "") {
+                active = true;
+            } else {
+                active = false;
+            }
+
+
+            let arr = []
+            for (i = 0; i < count.value; i++) {
+                if (active) {
+                    let t1 = document.createElement("tr");
+
+                    t1.className = "order"
+                    document.querySelector("tbody").appendChild(t1)
+                    let name_input = document.createElement("td")
+                    // let img = document.querySelector("img")
+                    let h3 = document.createElement("h3")
+                    h3.innerHTML = namee.value
+                    // img.src = img.value
+                    t1.appendChild(name_input)
+                    name_input.appendChild(h3)
+                    let price_input = document.createElement("td")
+                    price_input.innerHTML = `${price.value}$`
+                    t1.appendChild(price_input)
+                    let type_input = document.createElement("td")
+                    type_input.innerHTML = type.value
+                    t1.appendChild(type_input)
+
+                    let status = document.createElement("td")
+                    let spa_status = document.createElement("span");
+                    spa_status.innerText = "In Progress"
+                    status.className = "status"
+                    spa_status.className = " inpro";
+                    t1.appendChild(status)
+                    status.appendChild(spa_status)
+                    windoww.classList.remove("anim")
+
+                } else {
+                    windoww.classList.add("anim")
+                    setTimeout(() => {
+                        windoww.classList.remove("anim")
+                    }, 5000)
+                }
+            }
+
+
+
+            e.preventDefault()
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>

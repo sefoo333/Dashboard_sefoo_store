@@ -1,0 +1,341 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: system-ui;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0 50px;
+  background-color: #212529;
+  color: white;
+  padding-left: 240px;
+}
+.nav ion-icon:not(:nth-child(2)) {
+  font-size: 30px;
+  cursor: pointer;
+}
+.nav .search {
+  display: flex;
+}
+.nav .search input {
+  border: none;
+  outline: none;
+  width: 205px;
+  border-radius: 7px;
+  padding: 10px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.nav .search ion-icon {
+  background-color: #0d6efd;
+  padding: 10px;
+  cursor: pointer;
+}
+.nav .profile {
+  display: flex;
+  align-items: center;
+}
+.nav .profile a {
+  color: white;
+}
+.nav .profile a img {
+  font-size: 21px;
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 35px;
+}
+@media (max-width: 767px) {
+  .nav {
+    padding-left: 50px;
+    padding: 0 20px;
+    justify-content: flex-end;
+    transition: 0.5s;
+  }
+  .nav.fixed {
+    position: fixed !important;
+    z-index: 1;
+  }
+  .nav.fixed ~ .side {
+    margin-top: 50px;
+  }
+  .nav .profile span {
+    display: none;
+  }
+  .nav .search {
+    display: none;
+  }
+}
+
+.windoww {
+  display: flex;
+}
+.windoww .side {
+  padding: 15px 0;
+  background-color: #212529;
+  min-height: 100vh;
+  width: 300px;
+}
+@media (max-width: 767px) {
+  .windoww .side {
+    display: none;
+    z-index: 9;
+    height: 100% !important;
+    position: fixed;
+  }
+}
+.windoww .side .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.windoww .side .logo h1 {
+  color: white;
+  font-size: 25px;
+  font-weight: 400;
+  text-align: center;
+}
+.windoww .side .logo ion-icon {
+  color: white;
+  font-size: 23px;
+  margin-right: 10px;
+}
+.windoww .side .items {
+  padding: 10px 0;
+  width: 100%;
+}
+.windoww .side .items .item {
+  padding: 20px;
+  margin-bottom: 15px;
+  color: white;
+  font-size: 15px;
+  /* background-color: blue; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+}
+.windoww .side .items .item:hover, .windoww .side .items .item:nth-child(5) {
+  background-color: white;
+  color: black !important;
+}
+.windoww .side .items .item:hover a, .windoww .side .items .item:nth-child(5) a {
+  color: black;
+}
+.windoww .side .items .item a {
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: 17px;
+  width: 100%;
+}
+.windoww .side .items .item ion-icon {
+  font-size: 23px;
+}
+.windoww .sections {
+  width: 100vw;
+  padding: 0 20px;
+}
+.windoww .sections h1 {
+  margin: 25px 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-bottom: 3px solid;
+  width: 223px;
+}
+.windoww .sections .settings_sec {
+  padding: 20px 15px;
+  background-color: white;
+  color: #0d6efd;
+  width: 100%;
+  box-shadow: 1px 4px 14px 2px #ccc;
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+}
+.windoww .sections .settings_sec .sec-1 {
+  margin-bottom: 35px;
+}
+.windoww .sections .settings_sec .sec-1 h2 {
+  padding: 15px;
+  font-weight: 500;
+  color: #0d6efd;
+}
+.windoww .sections .settings_sec .sec-1 .settings_on_section {
+  display: flex;
+  flex-direction: column;
+}
+.windoww .sections .settings_sec .sec-1 .settings_on_section .set-1 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+.windoww .sections .settings_sec .sec-1 .settings_on_section .set-1 span {
+  font-size: 20px;
+  color: black;
+}
+.windoww .sections .settings_sec .sec-1 .settings_on_section .set-1 input {
+  width: 100%;
+  display: none;
+  height: 100%;
+  transition: 0.5s;
+}
+.windoww .sections .settings_sec .sec-1 .settings_on_section .set-1 input:checked + label {
+  background-color: #0d6efd;
+}
+.windoww .sections .settings_sec .sec-1 .settings_on_section .set-1 input:checked + label:before {
+  left: 60px;
+}
+.windoww .sections .settings_sec .sec-1 .settings_on_section .set-1 label {
+  width: 90px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 40px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.5s;
+  left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.windoww .sections .settings_sec .sec-1 .settings_on_section .set-1 label:before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border-radius: 50%;
+  left: 4px;
+  color: white;
+  transition: 0.5s;
+}
+.windoww .sections .settings_sec .sec-2 h2 {
+  padding: 15px;
+  font-weight: 500;
+  color: #0d6efd;
+}
+.windoww .sections .settings_sec .sec-2 .sett_on_sec form .s {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  font-size: 20px;
+  padding: 0 15px;
+}
+.windoww .sections .settings_sec .sec-2 .sett_on_sec form .s label {
+  margin-bottom: 10px;
+  color: black;
+}
+.windoww .sections .settings_sec .sec-2 .sett_on_sec form .s input {
+  padding: 5px 15px;
+  font-size: 17px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #ccc;
+}
+.windoww .sections .settings_sec .sec-2 .sett_on_sec form .s .la {
+  position: relative;
+}
+.windoww .sections .settings_sec .sec-2 .sett_on_sec form .s .la ion-icon {
+  color: #ccc;
+  font-size: 25px;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  cursor: pointer;
+}
+.windoww .sections .settings_sec .sec-2 .sett_on_sec form .buttons .but {
+  padding: 10px;
+  background-color: #0d6efd;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 7px;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.windoww .sections .settings_sec .sec-2 .sett_on_sec form .buttons .but:hover {
+  background-color: #1262da;
+}
+.windoww .sections .settings_sec .sec-2 .sett_on_sec form .banner .la {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.windoww .sections .settings_sec .sec-2 .sett_on_sec form .banner .la .uploader input {
+  width: 125px;
+  cursor: pointer;
+  border: none;
+  display: none;
+}
+.windoww .sections .settings_sec .sec-2 .sett_on_sec form .banner .la .uploader label {
+  display: block;
+  padding: 10px 15px;
+  background-color: #0d6efd !important;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 17px;
+  text-align: center;
+  cursor: pointer;
+}
+.windoww .sections .settings_sec .sec-2 .sett_on_sec form .banner .la img {
+  height: 150px;
+  width: 200px;
+  border-radius: 10px;
+}
+.windoww .sections .settings_sec .sec-2 .sett_on_sec form .immmage .la {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.windoww .sections .settings_sec .sec-2 .sett_on_sec form .immmage .la .uploader input {
+  width: 125px;
+  cursor: pointer;
+  border: none;
+  display: none;
+}
+.windoww .sections .settings_sec .sec-2 .sett_on_sec form .immmage .la .uploader label {
+  display: block;
+  padding: 10px 15px;
+  background-color: #0d6efd !important;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 17px;
+  text-align: center;
+  cursor: pointer;
+}
+.windoww .sections .settings_sec .sec-2 .sett_on_sec form .immmage .la img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.padding {
+  padding-left: 50px;
+}
+@media (max-width: 765px) {
+  .padding {
+    padding-left: 20px;
+  }
+}
+
+.hide {
+  display: none !important;
+}
+@media (max-width: 765px) {
+  .hide {
+    position: fixed;
+    display: block !important;
+  }
+}/*# sourceMappingURL=settigns.css.map */
