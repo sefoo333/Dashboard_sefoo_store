@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard - sefoo store</title>
+    <link rel="icon" href="images/431101610_1080829313176093_3650746657330942868_n.jpg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="darkmode.css">
     </script>
@@ -134,7 +135,7 @@
             <div class="anlaysis">
                 <div class="sec">
                     <div class="count">
-                        <h2>250</h2>
+                        <h2 class="counter_no">0</h2>
                         <span>All Customers</span>
                     </div>
                     <ion-icon name="people"></ion-icon>
@@ -142,7 +143,7 @@
                 </div>
                 <div class="sec">
                     <div class="count">
-                        <h2>70</h2>
+                        <h2 class="counter_no">0</h2>
                         <span>Orders</span>
                     </div>
                     <ion-icon name="pricetags"></ion-icon>
@@ -150,7 +151,7 @@
                 </div>
                 <div class="sec">
                     <div class="count">
-                        <h2>40</h2>
+                        <h2 class="counter_no">0</h2>
                         <span>Done Orders</span>
                     </div>
                     <ion-icon name="checkmark-done"></ion-icon>
@@ -158,7 +159,7 @@
                 </div>
                 <div class="sec">
                     <div class="count">
-                        <h2>$7000</h2>
+                        <h2 class="counter_no">$0</h2>
                         <span>Earnings</span>
                     </div>
                     <ion-icon name="cash-outline"></ion-icon>
@@ -376,6 +377,35 @@
 
 
     <script>
+        let te = document.querySelectorAll(".counter_no");
+
+        setInterval(() => {
+            te[0].innerHTML = parseInt(te[0].innerHTML) + 1
+            if (te[0].innerHTML == "250") {
+                clearInterval(1)
+            }
+        }, 1)
+        setInterval(() => {
+            te[1].innerHTML = parseInt(te[1].innerHTML) + 1
+            if (te[1].innerHTML == "70") {
+                clearInterval(2)
+            }
+        }, 30)
+        setInterval(() => {
+            te[2].innerHTML = parseInt(te[2].innerHTML) + 1
+            if (te[2].innerHTML == "40") {
+                clearInterval(3)
+            }
+        }, 40)
+        let count = 0
+        setInterval(() => {
+            count += 1;
+            te[3].innerHTML = "$" + count
+            if (count == 1000) {
+                te[3].innerHTML = "$7000"
+                clearInterval(4)
+            }
+        }, 0)
 
 
         let regitster_button = document.querySelector(".register")
